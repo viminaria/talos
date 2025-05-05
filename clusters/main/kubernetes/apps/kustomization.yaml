@@ -4,7 +4,7 @@ resources:
   - kubernetes-dashboard/ks.yaml
   - ollama/ks.yaml
   - actualserver/ks.yaml
-  - borealis/ks.yaml
+  # - borealis/ks.yaml
   - cloudflareddns/ks.yaml
   - crafty-4/ks.yaml
   - homebox/ks.yaml
