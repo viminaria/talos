@@ -1,0 +1,101 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: wg-easy
+  namespace: wg-easy
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: wg-easy
+      version: 16.4.2
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    securityContext:
+      container:
+        PUID: 0
+        UMASK: '0022'
+        advanced: false
+        capabilities:
+          add:
+            - NET_ADMIN
+            - NET_RAW
+            - SYS_MODULE
+        runAsGroup: 0
+        runAsNonRoot: false
+        runAsUser: 0
+        privileged: true
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: internal
+        hosts:
+          - host: "wg.${DOMAIN_0}"
+            paths:
+              - overrideService:
+                  name: "main"
+                  port: 51821
+                path: "/"
+                pathType: "Prefix"
+        integrations:
+          traefik:
+            enabled: false
+            #auth
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
+    service:
+      vpn:
+        type: LoadBalancer
+        loadBalancerIP: ${WG_EASY_IP}
+        externalTrafficPolicy: Local
+        ports:
+          vpn:
+            port: 1194
+    workload:
+      main:
+        podSpec:
+          securityContext:
+            sysctls:
+              - name: net.ipv4.ip_forward
+                value: "1"
+              - name: net.ipv4.conf.all.src_valid_mark
+                value: "1"
+          containers:
+            main:
+              probes:
+                liveness:
+                  type: tcp
+                readiness:
+                  type: tcp
+                startup:
+                  type: tcp
+              env:
+                WG_HOST: "${DDNS_URL}"
+                WG_DEFAULT_DNS: "${BLOCKY_IP}"
+                WG_PORT: "1194"
+                WG_MTU: 1420
+                WG_POST_UP: "iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE; iptables -A INPUT -p udp -m udp --dport 1194 -j ACCEPT; iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu;"
+                WG_POST_DOWN: "iptables -t nat -D POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE; iptables -D INPUT -p udp -m udp --dport 1194 -j ACCEPT; iptables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -D FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu;"
+                # PASSWORD_HASH uses bcrypt. You can create a hash at https://bcrypt.online/
+                PASSWORD_HASH: "$2y$10$LEKfuEubLBZi5tGNJSTv0.KfyOwZeYzjM65yZeklo.VM/eE44yrAK"
+                WG_ALLOWED_IPS: "0.0.0.0/0"
+                LANG: "en"
+                UI_TRAFFIC_STATS: "true"
