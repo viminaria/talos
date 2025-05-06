@@ -26,22 +26,22 @@ spec:
       retries: 3
   values:
     runtimeClassName: nvidia
-    master:
-      config:
-        extraLabelNs: ["nvidia.com"]
-    worker:
-      config:
-        core:
-          sources: ["pci", "system", "usb"]
-      tolerations:
-        - key: "node-role.kubernetes.io/master"
-          operator: "Equal"
-          value: ""
-          effect: "NoSchedule"
-        - key: "nvidia.com/gpu"
-          operator: "Equal"
-          value: "present"
-          effect: "NoSchedule"
+    # master:
+    #   config:
+    #     extraLabelNs: ["nvidia.com"]
+    # worker:
+    #   config:
+    #     core:
+    #       sources: ["pci", "system", "usb"]
+    #   tolerations:
+    #     - key: "node-role.kubernetes.io/master"
+    #       operator: "Equal"
+    #       value: ""
+    #       effect: "NoSchedule"
+    #     - key: "nvidia.com/gpu"
+    #       operator: "Equal"
+    #       value: "present"
+    #       effect: "NoSchedule"
     config:
       map:
         default: |-
@@ -57,5 +57,5 @@ spec:
                   replicas: 5
     gfd:
       enabled: true
-    nfd:
-      enabled: false
+    # nfd:
+    #   enabled: false
