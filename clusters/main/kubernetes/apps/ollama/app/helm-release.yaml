@@ -72,3 +72,13 @@ spec:
                   memory: 8Gi
                   nvidia.com/gpu: 1
           runtimeClassName: "nvidia"
+      api:
+        podSpec:
+          containers:
+            api:
+              resources:
+                limits:
+                  cpu: 8000m
+                  memory: 8Gi
+                  nvidia.com/gpu: 1
+          runtimeClassName: "nvidia"
