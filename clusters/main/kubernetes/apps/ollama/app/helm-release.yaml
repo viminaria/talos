@@ -73,6 +73,7 @@ spec:
                   nvidia.com/gpu: 1
           runtimeClassName: "nvidia"
       api:
+        enabled: true
         podSpec:
           containers:
             api:
