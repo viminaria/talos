@@ -47,6 +47,20 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
+      api:
+        enabled: true
+        ingressClassName: internal
+        hosts:
+          - host: "ai.${DOMAIN_0}"
+            paths:
+            - path: "/"
+              pathType: "Prefix"
+        integrations:
+          traefik:
+            enabled: false
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
     workload:
       main:
         podSpec:
