@@ -13,4 +13,4 @@ resources:
   - ozrates-static/ks.yaml
   - viminariacom-static/ks.yaml
   - wg-easy/ks.yaml
-  - sd-webui/ks.yaml
+  # - sd-webui/ks.yaml
