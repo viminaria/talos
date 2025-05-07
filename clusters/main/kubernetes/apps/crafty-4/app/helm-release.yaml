@@ -51,16 +51,6 @@ spec:
         annotations:
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
           nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-      minecraft:
-        enabled: true
-        ingressClassName: external
-        hosts:
-          - host: "mc.${DOMAIN_0}"
-        integrations:
-          traefik:
-            enabled: false
-          certManager:
-            enabled: false
     resources:
       limits:
         memory: 16Gi
