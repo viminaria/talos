@@ -8,7 +8,7 @@ spec:
   interval: 15m
   chart:
     spec:
-      chart: sd-webui-docker
+      chart: sd-webui
       version: 3.0.0
       sourceRef:
         kind: HelmRepository
