@@ -28,6 +28,10 @@ spec:
   values:
     global:
       stopAll: false
+    service:
+      minecraft:
+        type: LoadBalancer
+        loadBalancerIp: {$MINECRAFT_IP}
     ingress:
       main:
         enabled: true
