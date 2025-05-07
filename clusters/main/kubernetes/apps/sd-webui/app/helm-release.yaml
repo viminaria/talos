@@ -2,13 +2,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: sd-webui-docker
-  namespace: sd-webui-docker
+  name: sd-webui
+  namespace: sd-webui
 spec:
   interval: 15m
   chart:
     spec:
-      chart: sd-webui-docker
+      chart: sd-webui
       version: 2.0.0
       sourceRef:
         kind: HelmRepository
