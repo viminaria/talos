@@ -47,3 +47,6 @@ spec:
         annotations:
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
           nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    resources:
+      limits:
+        memory: 16Gi
