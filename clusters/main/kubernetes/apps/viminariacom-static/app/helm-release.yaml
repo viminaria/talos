@@ -45,7 +45,7 @@ spec:
               - overrideService:
                   name: "main"
                   port: 38080
-                path:"/"
+                path: "/"
                 pathType: "Prefix"
         integrations:
           traefik:
