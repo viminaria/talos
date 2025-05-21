@@ -27,6 +27,14 @@ spec:
   values:
     global:
       stopAll: false
+    securityContext:
+      container:
+        privileged: true
+        capabilities:
+          add:
+            - NET_ADMIN
+            - NET_RAW
+            - SYS_MODULE
     ingress:
       main:
         enabled: true
