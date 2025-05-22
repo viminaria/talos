@@ -27,20 +27,23 @@ spec:
   values:
     global:
       stopAll: false
-    securityContext:
-      container:
-        privileged: true
-        capabilities:
-          add:
-            - NET_ADMIN
-            - NET_RAW
-            - SYS_MODULE
+    service:
+      main:
+        type: ClusterIP
+        ports:
+          main:
+            port: 8123
+    homeassistant:
+      trusted_proxies: ["172.16.0.0/16"]
     ingress:
       main:
         enabled: true
         ingressClassName: internal
         hosts:
           - host: ha.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
         integrations:
           traefik:
             enabled: false
