@@ -48,6 +48,7 @@ spec:
       - bluemap
       - servux
       - sdlink
+      - craterlib
 
     workload:
       main:
