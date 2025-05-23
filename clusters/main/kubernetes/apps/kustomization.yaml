@@ -7,7 +7,6 @@ resources:
   - borealis/ks.yaml
   - cloudflareddns/ks.yaml
   - homebox/ks.yaml
-  - jellyfin/ks.yaml
   - metube/ks.yaml
   - ozrates-static/ks.yaml
   - viminariacom-static/ks.yaml
