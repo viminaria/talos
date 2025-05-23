@@ -6,3 +6,5 @@ resources:
   - volumeSnapshotClass.yaml
   - ingress.yaml
   - trim.yaml
+  - snapshot-delete.yaml
+  - snapshot-cleanup.yaml
