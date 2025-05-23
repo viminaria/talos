@@ -6,7 +6,6 @@ resources:
   - actualserver/ks.yaml
   - borealis/ks.yaml
   - cloudflareddns/ks.yaml
-  # - crafty-4/ks.yaml
   - homebox/ks.yaml
   - jellyfin/ks.yaml
   - metube/ks.yaml
