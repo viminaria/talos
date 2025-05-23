@@ -48,7 +48,6 @@ spec:
       - bluemap
       - servux
       - sdlink
-      - distanthorizons
 
     workload:
       main:
