@@ -119,8 +119,8 @@ spec:
       data:
         enabled: true
         type: nfs
-        path: {$MINECRAFT_NFS_PATH}
-        server: {$PROXMOX_IP}
+        path: ${MINECRAFT_NFS_PATH}
+        server: ${PROXMOX_IP}
 
       backups:
         enabled: false
