@@ -34,17 +34,6 @@ spec:
       repository: ghcr.io/donkie/spoolman
       pullPolicy: IfNotPresent
       tag: latest
-    securityContext:
-      container:
-        privileged: true
-        runAsNonRoot: false
-        readOnlyRootFilesystem: false
-        runAsUser: 0
-        runAsGroup: 0
-      capabilities:
-        add:
-          - SETGID
-          - SETUID
     service:
       main:
         ports:
@@ -72,9 +61,9 @@ spec:
           containers:
             main:
               env:
-                PUID: "0"
-                PGID: "0"
+                PUID: "568"
+                PGID: "568"
     persistence:
       data:
         enabled: true
-        mountPath: /data
+        mountPath: /home/app/.local/share/spoolman
