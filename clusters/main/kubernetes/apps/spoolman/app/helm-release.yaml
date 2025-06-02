@@ -36,8 +36,6 @@ spec:
       tag: latest
     securityContext:
       container:
-        runAsNonRoot: false
-        readOnlyRootFilesystem: false
         runAsUser: 518
         runAsGroup: 518
     service:
