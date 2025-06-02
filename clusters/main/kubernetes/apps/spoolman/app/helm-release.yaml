@@ -38,6 +38,7 @@ spec:
       container:
         privileged: true
         runAsNonRoot: false
+        readOnlyRootFilesystem: false
       capabilities:
         add:
           - SETGID
