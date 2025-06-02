@@ -35,9 +35,9 @@ spec:
       pullPolicy: IfNotPresent
       tag: latest
     securityContext:
+      privileged: true
       container:
-        runAsUser: 1000
-        runAsGroup: 1001
+        runAsNonRoot: false
     service:
       main:
         ports:
