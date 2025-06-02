@@ -36,8 +36,8 @@ spec:
       tag: latest
     securityContext:
       container:
-        runAsUser: 518
-        runAsGroup: 518
+        runAsUser: 1000
+        runAsGroup: 1001
     service:
       main:
         ports:
