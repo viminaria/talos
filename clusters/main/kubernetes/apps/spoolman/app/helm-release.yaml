@@ -67,12 +67,13 @@ spec:
             certificateIssuer: domain-0-le-prod
     workload:
       main:
+        enabled: true
         podSpec:
           containers:
             main:
               env:
-                PUID: 0
-                PGID: 0
+                PUID: "0"
+                PGID: "0"
     persistence:
       data:
         enabled: true
