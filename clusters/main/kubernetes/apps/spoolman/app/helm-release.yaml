@@ -37,6 +37,7 @@ spec:
     securityContext:
       container:
         privileged: true
+        readOnlyRootFilesystem: false
         runAsUser: 1000
         runAsGroup: 1001
       capabilities:
