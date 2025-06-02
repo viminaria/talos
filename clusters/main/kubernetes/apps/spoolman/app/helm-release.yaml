@@ -37,9 +37,6 @@ spec:
     securityContext:
       container:
         privileged: true
-        readOnlyRootFilesystem: false
-        runAsUser: 1000
-        runAsGroup: 1001
       capabilities:
         add:
           - SETGID
@@ -64,6 +61,14 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                UID: "568"
+                GUID: "568"
     persistence:
       data:
         enabled: true
