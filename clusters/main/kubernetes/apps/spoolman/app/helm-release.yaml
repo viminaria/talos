@@ -35,14 +35,16 @@ spec:
       pullPolicy: IfNotPresent
       tag: latest
     securityContext:
-    #   container:
-    #     privileged: true
-    #     runAsNonRoot: false
-    #     readOnlyRootFilesystem: false
-    #   capabilities:
-    #     add:
-    #       - SETGID
-    #       - SETUID
+      container:
+        privileged: true
+        runAsNonRoot: false
+        readOnlyRootFilesystem: false
+        runAsUser: 0
+        runAsGroup: 0
+      capabilities:
+        add:
+          - SETGID
+          - SETUID
     service:
       main:
         ports:
@@ -69,8 +71,8 @@ spec:
           containers:
             main:
               env:
-                PUID: 568
-                PGID: 568
+                PUID: 0
+                PGID: 0
     persistence:
       data:
         enabled: true
