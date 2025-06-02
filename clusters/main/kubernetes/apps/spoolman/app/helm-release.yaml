@@ -67,8 +67,8 @@ spec:
           containers:
             main:
               env:
-                UID: "568"
-                GUID: "568"
+                SPOOLMAN_UID: "568"
+                SPOOLMAN_GUID: "568"
     persistence:
       data:
         enabled: true
