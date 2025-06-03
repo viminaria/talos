@@ -60,6 +60,8 @@ spec:
         podSpec:
           containers:
             main:
+              enabled: true
+              primary: true
               env:
                 PUID: "568"
                 PGID: "568"
