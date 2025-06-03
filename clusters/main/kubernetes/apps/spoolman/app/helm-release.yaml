@@ -36,12 +36,11 @@ spec:
       tag: latest
     securityContext:
       privileged: true
-      runAsUser: 0
-      runAsGroup: 0
+      runAsUser: 1000
+      runAsGroup: 1001
       readOnlyRootFilesystem: false
       capabilities:
         - SETGROUP
-        - CHOWN
     service:
       main:
         ports:
@@ -62,16 +61,16 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
-    workload:
-      main:
-        enabled: true
-        podSpec:
-          containers:
-            main:
-              enabled: true
-              env:
-                PUID: 0
-                PGID: 0
+    # workload:
+    #   main:
+    #     enabled: true
+    #     podSpec:
+    #       containers:
+    #         main:
+    #           enabled: true
+    #           env:
+    #             PUID: 0
+    #             PGID: 0
     persistence:
       data:
         enabled: true
