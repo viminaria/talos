@@ -41,11 +41,12 @@ spec:
       readOnlyRootFilesystem: false
       capabilities:
         - SETGROUP
+        - CHOWN
     service:
       main:
         ports:
           main:
-            port: 8000
+            port: 7912
     ingress:
       main:
         enabled: true
