@@ -40,7 +40,7 @@ spec:
       runAsGroup: 0
       readOnlyRootFilesystem: false
       capabilities:
-        - SETGROUP
+        - ALL
     service:
       main:
         ports:
