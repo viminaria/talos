@@ -36,8 +36,8 @@ spec:
       tag: latest
     securityContext:
       privileged: true
-      runAsUser: 1000
-      runAsGroup: 1001
+      runAsUser: 0
+      runAsGroup: 0
       readOnlyRootFilesystem: false
       capabilities:
         - SETGROUP
@@ -61,16 +61,16 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
-    # workload:
-    #   main:
-    #     enabled: true
-    #     podSpec:
-    #       containers:
-    #         main:
-    #           enabled: true
-    #           env:
-    #             PUID: 0
-    #             PGID: 0
+    workload:
+      main:
+        enabled: true
+        podSpec:
+          containers:
+            main:
+              enabled: true
+              env:
+                PUID: 0
+                PGID: 0
     persistence:
       data:
         enabled: true
