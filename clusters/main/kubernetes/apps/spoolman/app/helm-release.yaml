@@ -35,12 +35,9 @@ spec:
       pullPolicy: IfNotPresent
       tag: latest
     securityContext:
-      privileged: true
-      runAsUser: 0
-      runAsGroup: 0
-      readOnlyRootFilesystem: false
-      capabilities:
-        - ALL
+      privileged: false
+      runAsUser: 1000
+      runAsGroup: 1001
     service:
       main:
         ports:
@@ -49,7 +46,7 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: "internal" # "internal" 
+        ingressClassName: "internal" 
         hosts:
           - host: spoolman.${DOMAIN_0}
             paths:
@@ -61,16 +58,6 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
-    workload:
-      main:
-        enabled: true
-        podSpec:
-          containers:
-            main:
-              enabled: true
-              env:
-                PUID: 0
-                PGID: 0
     persistence:
       data:
         enabled: true
