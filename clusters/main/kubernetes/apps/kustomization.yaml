@@ -14,4 +14,3 @@ resources:
   - minecraft-java/ks.yaml
   - minecraft-router/ks.yaml
   - ollama/ks.yaml
-  - spoolman/ks.yaml
