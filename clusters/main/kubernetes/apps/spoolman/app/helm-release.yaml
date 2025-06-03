@@ -64,12 +64,12 @@ spec:
             main:
               enabled: true
               securityContext:
-                runAsUser: 568
-                runAsGroup: 568
+                runAsUser: 1000
+                runAsGroup: 1001
                 privileged: true
-              env:
-                PUID: 568
-                PGID: 568
+              # env:
+              #   PUID: 568
+              #   PGID: 568
     persistence:
       data:
         enabled: true
