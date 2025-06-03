@@ -64,9 +64,11 @@ spec:
             main:
               enabled: true
               securityContext:
-                runAsUser: 1000
-                runAsGroup: 1001
+                runAsUser: 0
+                runAsGroup: 0
                 privileged: true
+                caps:
+                  - SETGROUP
               # env:
               #   PUID: 568
               #   PGID: 568
