@@ -35,7 +35,8 @@ spec:
       pullPolicy: IfNotPresent
       tag: latest
     securityContext:
-      
+      capabilities:
+        - SETGROUP
     service:
       main:
         ports:
@@ -67,8 +68,6 @@ spec:
                 runAsUser: 0
                 runAsGroup: 0
                 privileged: true
-                caps:
-                  - SETGROUP
               # env:
               #   PUID: 568
               #   PGID: 568
