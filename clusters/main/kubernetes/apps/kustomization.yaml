@@ -15,4 +15,4 @@ resources:
   - minecraft-router/ks.yaml
   - ollama/ks.yaml
   - dumbassets/ks.yaml
-  # - spoolman/ks.yaml
+  - spoolman/ks.yaml
