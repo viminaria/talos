@@ -34,12 +34,6 @@ spec:
       repository: ghcr.io/donkie/spoolman
       pullPolicy: IfNotPresent
       tag: latest
-    securityContext:
-      container:
-        readOnlyRootFilesystem: false
-        runAsNonRoot: false
-        runAsUser: 0
-        runAsGroup: 0
     service:
       main:
         ports:
