@@ -34,7 +34,7 @@ spec:
       repository: ghcr.io/donkie/spoolman
       pullPolicy: IfNotPresent
       tag: latest
-    securityContext:
+    service:
       main:
         ports:
           main:
