@@ -60,4 +60,4 @@ spec:
     persistence:
       data:
         enabled: true
-        mountPath: /home/app/.local/share/spoolman
+        mountPath: /app/data
