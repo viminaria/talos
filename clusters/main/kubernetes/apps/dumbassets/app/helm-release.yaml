@@ -60,4 +60,7 @@ spec:
     persistence:
       data:
         enabled: true
-        mountPath: /app/data
+        targetSelector:
+          main:
+            main:
+              mountPath: /app/data
