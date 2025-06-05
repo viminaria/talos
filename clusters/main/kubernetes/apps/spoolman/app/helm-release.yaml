@@ -66,4 +66,4 @@ spec:
         targetSelector:
           main:
             main:
-              mountPath: /home/app/.local/share/spoolman
+              mountPath: /data
