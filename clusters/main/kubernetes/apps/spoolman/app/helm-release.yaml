@@ -33,11 +33,9 @@ spec:
     image:
       repository: ghcr.io/donkie/spoolman
       pullPolicy: IfNotPresent
-      tag: edge
+      tag: latest
     securityContext:
-      privileged: true
-      runAsUser: 0
-      runAsNonRoot: false
+      runAsUser: 1000
     service:
       main:
         ports:
