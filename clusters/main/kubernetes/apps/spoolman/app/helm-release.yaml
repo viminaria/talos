@@ -34,6 +34,8 @@ spec:
       repository: ghcr.io/donkie/spoolman
       pullPolicy: IfNotPresent
       tag: edge
+    securityContext:
+      runAsUser: 1000
     service:
       main:
         ports:
