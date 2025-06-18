@@ -35,7 +35,8 @@ spec:
       pullPolicy: IfNotPresent
       tag: edge
     securityContext:
-      runAsUser: 1000
+      runAsUser: 0
+      runAsNonRoot: false
     service:
       main:
         ports:
