@@ -35,6 +35,7 @@ spec:
       pullPolicy: IfNotPresent
       tag: edge
     securityContext:
+      privileged: true
       runAsUser: 0
       runAsNonRoot: false
     service:
