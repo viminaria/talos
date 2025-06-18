@@ -61,7 +61,4 @@ spec:
     persistence:
       data:
         enabled: true
-        targetSelector:
-          main:
-            main:
-              mountPath: /home/data/.local/spoolman
+        mountPath: /home/data/.local/spoolman
