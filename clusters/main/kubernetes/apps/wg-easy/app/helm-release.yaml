@@ -82,8 +82,8 @@ spec:
             main:
               resources:
                 limits:
-                  cpu: 2000m
-                  memory: 8Gi
+                  cpu: 8000m
+                  memory: 12Gi
               probes:
                 liveness:
                   type: tcp
