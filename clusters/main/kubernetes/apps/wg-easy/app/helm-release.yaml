@@ -80,10 +80,6 @@ spec:
                 value: "1"
           containers:
             main:
-              resources:
-                limits:
-                  cpu: 8000m
-                  memory: 12Gi
               probes:
                 liveness:
                   type: tcp
