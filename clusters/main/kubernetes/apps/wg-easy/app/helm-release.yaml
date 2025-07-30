@@ -91,7 +91,7 @@ spec:
                 WG_HOST: "${DDNS_URL}"
                 WG_DEFAULT_DNS: "${BLOCKY_IP}"
                 WG_PORT: "1194"
-                WG_MTU: 1440
+                WG_MTU: 1450
                 WG_POST_UP: "iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE; iptables -A INPUT -p udp -m udp --dport 1194 -j ACCEPT; iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu;"
                 WG_POST_DOWN: "iptables -t nat -D POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE; iptables -D INPUT -p udp -m udp --dport 1194 -j ACCEPT; iptables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -D FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu;"
                 # PASSWORD_HASH uses bcrypt. You can create a hash at https://bcrypt.online/
