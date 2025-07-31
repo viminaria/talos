@@ -3,6 +3,6 @@
   "extends": [
     "config:recommended",
     "github>truecharts/public//.github/renovate/main.json5",
-    "cilium.json5"
+    "./cilium.json5"
   ]
 }
