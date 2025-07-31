@@ -22,7 +22,7 @@ spec:
   timeout: 20m
   maxHistory: 3
   driftDetection:
-    mode: warn
+    mode: enabled
   install:
     remediation:
       retries: 3
@@ -34,10 +34,15 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    cni:
+      exclusive: false
     l2announcements:
       enabled: false
     socketLB:
       hostNamespaceOnly: true
+    loadBalancer:
+      algorithm: maglev
+      mode: snat
     autoDirectNodeRoutes: true
     routingMode: native
     bpf:
@@ -82,5 +87,6 @@ spec:
     kubeProxyReplacementHealthzBindAddr: 0.0.0.0:10256
     localRedirectPolicy: true
     operator:
+      replicas: 1
       rollOutPods: true
     rollOutCiliumPods: true
