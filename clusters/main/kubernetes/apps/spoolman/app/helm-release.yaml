@@ -52,7 +52,6 @@ spec:
             enabled: true
             certificateIssuer: domain-0-le-prod
     persistence:
-      enabled: true
-      main:
-        data:
-          mountPath: /data
+      data:
+        enabled: true
+        mountPath: /data
