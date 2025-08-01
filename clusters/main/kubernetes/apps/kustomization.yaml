@@ -7,9 +7,7 @@ resources:
   - ozrates-static/ks.yaml
   - viminariacom-static/ks.yaml
   - wg-easy/ks.yaml
-  - actualserver/ks.yaml
   - home-assistant/ks.yaml
-  - homebox/ks.yaml
   - metube/ks.yaml
   - minecraft-java/ks.yaml
   - minecraft-router/ks.yaml
