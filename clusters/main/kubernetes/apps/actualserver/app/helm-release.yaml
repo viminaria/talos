@@ -32,7 +32,7 @@ spec:
         enabled: true
         ingressClassName: internal
         hosts:
-          - host: budget.${DOMAIN_0}
+          - host: actual.${DOMAIN_0}
         integrations:
           traefik:
             enabled: false
