@@ -13,4 +13,4 @@ resources:
   - minecraft-router/ks.yaml
   - ollama/ks.yaml
   - spoolman/ks.yaml
-  # - actualserver/ks.yaml
+  - actualserver/ks.yaml
