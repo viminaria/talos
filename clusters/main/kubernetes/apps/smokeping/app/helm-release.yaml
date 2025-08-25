@@ -24,12 +24,12 @@ spec:
     crds: CreateReplace
     remediation:
       retries: 3
-  securityContext:
-    container:
-      privileged: true
   values:
     global:
       stopAll: false
+    securityContext:
+      container:
+        privileged: true
     ingress:
       main:
         enabled: true
