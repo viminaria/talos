@@ -25,6 +25,8 @@ spec:
     remediation:
       retries: 3
   securityContext:
+    capabilities:
+      - NET_RAW
     container:
       privileged: true
   values:
