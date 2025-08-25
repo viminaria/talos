@@ -14,4 +14,4 @@ resources:
   - ollama/ks.yaml
   - spoolman/ks.yaml
   - actualserver/ks.yaml
-  # - smokeping/ks.yaml
+  - smokeping/ks.yaml
