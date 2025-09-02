@@ -14,3 +14,4 @@ resources:
   - ollama/ks.yaml
   - spoolman/ks.yaml
   - actualserver/ks.yaml
+  - changedetection-io/ks.yaml
