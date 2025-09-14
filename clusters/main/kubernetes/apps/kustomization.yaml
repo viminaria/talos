@@ -15,3 +15,4 @@ resources:
   - spoolman/ks.yaml
   - actualserver/ks.yaml
   - changedetection-io/ks.yaml
+  - nextcloud/ks.yaml
