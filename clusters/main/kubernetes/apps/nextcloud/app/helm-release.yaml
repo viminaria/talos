@@ -33,6 +33,9 @@ spec:
         ingressClassName: external
         hosts:
           - host: nextcloud.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
         integrations:
           traefik:
             enabled: false
