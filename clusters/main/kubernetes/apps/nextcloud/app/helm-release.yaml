@@ -43,11 +43,12 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
-    data:
-      enabled: true
-      type: nfs
-      path: ${NEXTCLOUD_NFS_PATH}
-      server: ${PROXMOX_IP}
+    persistence:
+      data:
+        enabled: true
+        type: nfs
+        path: ${NEXTCLOUD_NFS_PATH}
+        server: ${PROXMOX_IP}
     nextcloud:
       collabora:
         enabled: true
