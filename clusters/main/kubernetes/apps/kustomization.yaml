@@ -9,8 +9,8 @@ resources:
   - wg-easy/ks.yaml
   # - home-assistant/ks.yaml
   # - metube/ks.yaml
-  # - minecraft-java/ks.yaml
-  # - minecraft-router/ks.yaml
+  - minecraft-java/ks.yaml
+  - minecraft-router/ks.yaml
   - ollama/ks.yaml
   - spoolman/ks.yaml
   - actualserver/ks.yaml
