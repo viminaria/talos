@@ -7,12 +7,12 @@ resources:
   - ozrates-static/ks.yaml
   - viminariacom-static/ks.yaml
   - wg-easy/ks.yaml
-  # - home-assistant/ks.yaml
-  # - metube/ks.yaml
+  - home-assistant/ks.yaml
+  - metube/ks.yaml
   - minecraft-java/ks.yaml
   - minecraft-router/ks.yaml
   - ollama/ks.yaml
   - spoolman/ks.yaml
   - actualserver/ks.yaml
-  # - changedetection-io/ks.yaml
-  # - nextcloud/ks.yaml
+  - changedetection-io/ks.yaml
+  - nextcloud/ks.yaml
