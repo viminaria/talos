@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - kubernetes-dashboard/ks.yaml
   # - borealis/ks.yaml
-  # - cloudflareddns/ks.yaml
+  - cloudflareddns/ks.yaml
   # - ozrates-static/ks.yaml
   # - viminariacom-static/ks.yaml
   # - wg-easy/ks.yaml
