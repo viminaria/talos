@@ -41,6 +41,9 @@ spec:
         integrations:
           metallb:
             enabled: true
+    workload:
+      main:
+        replicas: 1
     k8sgateway:
       # -- list of processed domains
       domains:
