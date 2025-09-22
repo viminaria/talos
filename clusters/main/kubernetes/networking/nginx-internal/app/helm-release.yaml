@@ -30,19 +30,20 @@ spec:
     keepHistory: false
   values:
     controller:
-      replicaCount: 2
+      replicaCount: 1
       service:
         externalTrafficPolicy: Local
         annotations:
           # TODO: Maybe play with this
           # internal-dns.alpha.kubernetes.io/hostname: internal.${DOMAIN_0}
           metallb.io/ip-allocated-from-pool: main
+          metallb.universe.tf/ip-allocated-from-pool: main
           metallb.io/loadBalancerIPs: ${NGINX_INTERNAL_IP}
       ingressClassByName: true
-      watchIngressWithoutClass: true
+      watchIngressWithoutClass: false
       ingressClassResource:
         name: internal
-        default: true
+        default: false
         controllerValue: k8s.io/internal
       config:
         allow-snippet-annotations: true
